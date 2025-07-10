@@ -2,18 +2,28 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Dr. Anis TOUMI – Enseignant-Chercheur STAPS</title>
+  <title>Dr. yy – Enseignant-Chercheur STAPS</title>
 
-  <!-- 🔐 Protection par mot de passe -->
-<script>
-  var motDePasseValide = "biomec2025";
-  var entre = prompt("Mot de passe requis pour accéder au site :");
+  <!-- 🔐 Protection par mot de passe renforcée -->
+  <script>
+    var motDePasseValide = "biomec2025";
+    var entre = prompt("Mot de passe requis pour accéder au site :");
 
-  if (entre !== motDePasseValide) {
-    document.write("<!DOCTYPE html><html><head><title>Accès refusé</title></head><body><h1>🔐 Accès refusé</h1><p>Mot de passe incorrect.</p></body></html>");
-    window.stop(); // Arrête le chargement de la page
-  }
-</script>
+    if (entre !== motDePasseValide) {
+      document.open();
+      document.write(`
+        <!DOCTYPE html>
+        <html>
+          <head><title>Accès refusé</title></head>
+          <body style="font-family:sans-serif; text-align:center; padding-top: 50px;">
+            <h1>🔐 Accès refusé</h1>
+            <p>Mot de passe incorrect.</p>
+          </body>
+        </html>
+      `);
+      document.close();
+    }
+  </script>
 </head>
 <body>
   <h1>Bienvenue sur ma page</h1>

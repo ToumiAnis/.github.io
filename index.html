@@ -5,14 +5,15 @@
   <title>Dr. Anis TOUMI – Enseignant-Chercheur STAPS</title>
 
   <!-- 🔐 Protection par mot de passe -->
-  <script>
-    var pass = prompt("Mot de passe requis pour accéder au site :");
-    if (pass !== "biomec2025") {
-      document.write("<h1>Accès refusé</h1><p>Mot de passe incorrect.</p>");
-      throw new Error("Accès refusé");
-    }
-  </script>
+<script>
+  var motDePasseValide = "biomec2025";
+  var entre = prompt("Mot de passe requis pour accéder au site :");
 
+  if (entre !== motDePasseValide) {
+    document.write("<!DOCTYPE html><html><head><title>Accès refusé</title></head><body><h1>🔐 Accès refusé</h1><p>Mot de passe incorrect.</p></body></html>");
+    window.stop(); // Arrête le chargement de la page
+  }
+</script>
 </head>
 <body>
   <h1>Bienvenue sur ma page</h1>

@@ -2,29 +2,36 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Dr. yy – Enseignant-Chercheur STAPS</title>
+  <title>Dr. AT – Enseignant-Chercheur STAPS</title>
 
-  <!-- 🔐 Protection par mot de passe renforcée -->
+  <style>
+    body { display: none; }
+  </style>
+
   <script>
     var motDePasseValide = "biomec2025";
-    var entre = prompt("Mot de passe requis pour accéder au site :");
+    var entre = prompt("Ce site est réservé aux étudiants STAPS. Entrez le mot de passe :");
 
-    if (entre !== motDePasseValide) {
-      document.open();
+    if (entre === motDePasseValide) {
+      document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.display = "block";
+      });
+    } else {
       document.write(`
         <!DOCTYPE html>
         <html>
-          <head><title>Accès refusé</title></head>
-          <body style="font-family:sans-serif; text-align:center; padding-top: 50px;">
-            <h1>🔐 Accès refusé</h1>
-            <p>Mot de passe incorrect.</p>
-          </body>
+        <head><title>Accès refusé</title></head>
+        <body style="font-family:sans-serif; text-align:center; padding-top: 50px;">
+          <h1>🔐 Accès refusé</h1>
+          <p>Mot de passe incorrect.</p>
+        </body>
         </html>
       `);
       document.close();
     }
   </script>
 </head>
+
 <body>
   <h1>Bienvenue sur ma page</h1>
   <p>Ce site présente mes activités d’enseignement et de recherche (eg., biomécanique).</p>

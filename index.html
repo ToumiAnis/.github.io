@@ -2,21 +2,34 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Dr. AT – Enseignant-Chercheur STAPS</title>
-
-  <style>
-    body { display: none; }
-  </style>
-
+  <title>Accès sécurisé – BioMecBot</title>
   <script>
-    var motDePasseValide = "biomec2025";
-    var entre = prompt("Ce site est réservé aux étudiants STAPS. Entrez le mot de passe :");
+    const motDePasseValide = "biomec2025";
+    const motDePasse = prompt("Ce site est réservé aux étudiants STAPS.\nVeuillez entrer le mot de passe :");
 
-    if (entre === motDePasseValide) {
-      document.addEventListener("DOMContentLoaded", function() {
-        document.body.style.display = "block";
-      });
+    if (motDePasse === motDePasseValide) {
+      // Créer le contenu dynamiquement
+      document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Dr. AT – Enseignant-Chercheur STAPS</title>
+        </head>
+        <body>
+          <h1>Bienvenue sur ma page</h1>
+          <p>Ce site présente mes activités d’enseignement et de recherche (eg., biomécanique).</p>
+          <p>Chatbot pédagogique est disponible pour répondre à vos questions.</p>
+
+          <!-- 🔧 Intégration du chatbot Botpress -->
+          <script src="https://cdn.botpress.cloud/webchat/v3.1/inject.js"><\/script>
+          <script src="https://files.bpcontent.cloud/2025/07/07/11/20250707113537-SEPRUYRV.js"><\/script>
+        </body>
+        </html>
+      `);
+      document.close();
     } else {
+      // Afficher un écran d’erreur
       document.write(`
         <!DOCTYPE html>
         <html>
@@ -31,14 +44,5 @@
     }
   </script>
 </head>
-
-<body>
-  <h1>Bienvenue sur ma page</h1>
-  <p>Ce site présente mes activités d’enseignement et de recherche (eg., biomécanique).</p>
-  <p>Chatbot pédagogique est disponible pour répondre à vos questions.</p>
-
-  <!-- 🔧 Intégration du chatbot Botpress v3.1 -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.1/inject.js" defer></script>
-  <script src="https://files.bpcontent.cloud/2025/07/07/11/20250707113537-SEPRUYRV.js" defer></script>
-</body>
+<body></body>
 </html>
